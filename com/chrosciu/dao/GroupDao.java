@@ -10,15 +10,15 @@ import java.sql.Statement;
 
 public class GroupDao {
     private static final String CREATE_GROUP =
-            "INSERT INTO groups(name) VALUES (?)";
+            "INSERT INTO `groups`(name) VALUES (?)";
     private static final String READ_GROUP =
-            "SELECT * FROM groups where id = ?";
+            "SELECT * FROM `groups` where id = ?";
     private static final String UPDATE_GROUP =
-            "UPDATE groups SET name = ? where id = ?";
+            "UPDATE `groups` SET name = ? where id = ?";
     private static final String DELETE_GROUP =
-            "DELETE FROM groups WHERE id = ?";
+            "DELETE FROM `groups` WHERE id = ?";
     private static final String FIND_ALL_GROUPS =
-            "SELECT * FROM groups";
+            "SELECT * FROM `groups`";
 
     public Group create(Group group) {
         try (Connection conn = DBUtil.connect()) {
