@@ -38,7 +38,7 @@ public class GroupDao {
         }
     }
 
-    public Group readGroup(int groupId) {
+    public Group read(int groupId) {
         try (Connection conn = DBUtil.connect()) {
             PreparedStatement statement = conn.prepareStatement(READ_GROUP);
             statement.setInt(1, groupId);
@@ -94,9 +94,9 @@ public class GroupDao {
         }
     }
 
-    private Group[] addToArray(Group g, Group[] groups) {
+    private Group[] addToArray(Group group, Group[] groups) {
         Group[] tmpGroups = Arrays.copyOf(groups, groups.length + 1);
-        tmpGroups[groups.length] = g;
+        tmpGroups[groups.length] = group;
         return tmpGroups;
     }
 }

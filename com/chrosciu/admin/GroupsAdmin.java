@@ -3,7 +3,6 @@ package com.chrosciu.admin;
 import com.chrosciu.dao.GroupDao;
 import com.chrosciu.model.Group;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 //Program po uruchomieniu wyświetli na konsoli
@@ -56,7 +55,7 @@ public class GroupsAdmin {
                 case "edit":
                     System.out.print("Podaj id grupy do edycji: ");
                     int groupId = scanner.nextInt();
-                    Group toUpdate = groupDao.readGroup(groupId);
+                    Group toUpdate = groupDao.read(groupId);
                     if (toUpdate==null) {
                         System.out.println("Grupa o takim id nie istnieje.");
                         break;
